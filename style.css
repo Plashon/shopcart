@@ -1,0 +1,116 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.product img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  display: block;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 23px;
+  height: fit-content;
+}
+
+.product {
+  flex: 0 0 200px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.product #add-to-cart {
+  margin-top: 10px;
+  background-color: rgb(58, 188, 58);
+  cursor: pointer;
+}
+
+.cart {
+  flex: 45%;
+  padding: 20px; /* Add padding to create space inside the cart */
+  margin-top: 20px; /* Add margin to create space around the cart */
+  background-color: #efefef; /* Add a background color for better visibility */
+  border-radius: 10px; /* Add border radius for a rounded appearance */
+  height: fit-content;
+}
+
+
+
+#cart {
+  padding-top: 25px;
+}
+
+span {
+  margin-top: 25px;
+}
+
+.cart #place-order {
+  margin-top: 15px;
+  background-color: rgb(53, 216, 123);
+  cursor:pointer;
+}
+
+.h1 {
+  /* margin: 25px; */
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+.layer {
+  height: 0;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  border-radius: 15px;
+  text-align: center;
+  transition: height 0.5s;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), #3c3c3c);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  -webkit-transition: height 0.5s;
+  -moz-transition: height 0.5s;
+  -ms-transition: height 0.5s;
+  -o-transition: height 0.5s;
+}
+
+.layer p {
+  color: lightgray;
+}
+
+.product:hover img {
+  transform: scale(0.95);
+  /*border-radius: 15px;
+  */:;
+  -webkit-transform: scale(0.95);
+  -moz-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  -o-transform: scale(0.95);
+}
+
+.product:hover .layer {
+  height: 100%;
+  border-radius: 15px;
+}
+
+.btn-warning{
+  background-color: rgb(219, 100, 37);
+}
+.btn-danger{
+  background-color: rgb(159, 22, 22);
+}
