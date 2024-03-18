@@ -1,13 +1,13 @@
 document.getElementById("place-order").addEventListener("click", async () => {
   const { PDFDocument, rgb } = PDFLib;
   const pdfDoc = await PDFDocument.create();
-  const page = pdfDoc.addPage([180, 250]); // smaller page size
+  const page = pdfDoc.addPage([200, 250]); // smaller page size
   const { width, height } = page.getSize();
 
   let y = height - 50;
   // Add header "Receipt"
   page.drawText("Receipt", {
-    x: 44.5,
+    x: 65,
     y: height - 30,
     size: 18,
     color: rgb(0, 0, 0),
@@ -19,8 +19,8 @@ document.getElementById("place-order").addEventListener("click", async () => {
   for (const productName in cart) {
     const item = cart[productName];
     const itemTotalPrice = item.quantity * item.price;
-    const text = `${productName}: ${item.quantity} x $${item.price} = $${itemTotalPrice}`;
-    page.drawText(text, { x: 20, y, size: 8, color: rgb(0, 0, 0) });
+    const text = `${productName}: ${item.quantity} x ${item.price} Bath = ${itemTotalPrice} Bath`;
+    page.drawText(text, { x: 10, y, size: 8, color: rgb(0, 0, 0) });
     y -= 10;
   }
 
@@ -29,7 +29,7 @@ document.getElementById("place-order").addEventListener("click", async () => {
     (acc, item) => acc + item.quantity * item.price,
     0
   );
-  const totalPriceText = `Total Price: $${totalPrice}`;
+  const totalPriceText = `Total Price: ${totalPrice} Bath`;
   page.drawText(totalPriceText, {
     x: 20,
     y: 50,

@@ -25,7 +25,7 @@ function updateCartDisplay() {
     const productElement = document.createElement("div");
 
     const productInfoElement = document.createElement("span");
-    productInfoElement.textContent = `${productName}: ${item.quantity} x $${item.price} = $${itemTotalPrice}`;
+    productInfoElement.textContent = `${productName}: ${item.quantity} x ฿${item.price} = ฿${itemTotalPrice}`;
     productElement.appendChild(productInfoElement);
 
     const removeButton = document.createElement("button");
@@ -44,7 +44,7 @@ function updateCartDisplay() {
     cartElement.innerHTML = "<p>No items in cart.</p>";
   } else {
     const totalPriceElement = document.createElement("p");
-    totalPriceElement.textContent = `Total Price: $${totalPrice}`;
+    totalPriceElement.textContent = `Total Price: ฿${totalPrice}`;
     const placeOrderButton = document.createElement("button");
     placeOrderButton.textContent = "Place Order";
     placeOrderButton.classList.add("btn", "btn-success");
