@@ -37,6 +37,7 @@ document.getElementById("place-order").addEventListener("click", async () => {
     color: rgb(0, 0, 0),
   });
 
+
   const pdfBytes = await pdfDoc.save();
   const blob = new Blob([pdfBytes], { type: "application/pdf" });
   const url = URL.createObjectURL(blob);
@@ -47,4 +48,3 @@ document.getElementById("place-order").addEventListener("click", async () => {
   order.download = "order.pdf";
   order.click();
 });
-
